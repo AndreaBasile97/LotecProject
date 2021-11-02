@@ -1,0 +1,36 @@
+.btn-play, .btn-pause, .btn {
+    background-color: DodgerBlue;
+    border: none;
+    color: white;
+    padding: 12px 16px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  /* Darker background on mouse-over */
+  .btn-play:hover, .btn-pause:hover, .btn:hover {
+    background-color: RoyalBlue;
+  }
+
+  #custom-seekbar
+{  
+  cursor: pointer;
+  height: 20px;
+  margin-bottom: 10px;
+  outline:thin solid RoyalBlue;
+  overflow: hidden;
+  position: relative;
+  width: 400px;
+}
+#custom-seekbar span
+{
+  background-color: RoyalBlue;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 0px;
+}
+
+/* following rule is for hiding Stack Overflow's console  */
+.as-console-wrapper{ display: none !important;}

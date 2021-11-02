@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="style.css">
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+        <script src="https://superal.github.io/canvas2image/canvas2image.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+        <script src="getIdwithmouse.js"></script>
+        <script src="zoomvideo.js"></script>
+        <script src="screenshot.js"></script>
+        <script src="speed.js"></script>
+        <script src="playpause.js"></script>
+        <script src="volume.js"></script>
+        <script src="restart.js"></script>
+        <script src="progress.js"></script>
+        
+
+    </head>
+    <body class="s">
+            <div id="indagine1" style="width:512px; height:300px; overflow:hidden">
+                <video id="i1" style="width:100%;  position:relative">
+                    <source src="movie.mp4">
+                </video>
+            </div>
+
+            <div style="width:512px;" id="custom-seekbar">
+                <span></span>
+            </div>
+
+            <button class="btn-play" onclick="playPause('i1')"><i class="fa fa-play-circle"></i></button>
+            <button class="btn-pause" onclick="playPause('i1')" hidden><i class="fa fa-pause-circle"></i></button>
+            <button class="btn" onclick="restartVideo('i1')"><i class="fa fa-undo"></i></button>
+
+            <select onchange="setSpeed('#i1', this.value)">
+                <option value="1">Normale</option>
+                <option value="2">x2</option>
+                <option value="4">x4</option>
+                <option value="8">x8</option>
+                <option value="16">x16</option>
+            </select>
+            <input id="vol-control" type="range" min="0" max="100" step="1" oninput="SetVolume(this.value, 'i1')" onchange="SetVolume(this.value)"></input>
+            <button class="btn" id="cit" onclick="shoot(), download()"><i class="fa fa-camera"></i></button>
+    </body>
+    <script src="seekbar.js"></script>
+</html>
